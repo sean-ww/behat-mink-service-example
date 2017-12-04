@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+
+# Turn on the engine:
+RewriteEngine on
+
+# Force https
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+# Use index.php
+RewriteRule ^ index.php
+
+</IfModule>
